@@ -1,0 +1,64 @@
+SOLID-Refactored-AdventureGame
+
+Project Overview
+
+SOLID-Refactored-AdventureGame is a refactored version of a monolithic adventure game designed to follow the SOLID principles for improved maintainability, scalability, and readability.
+
+The game is structured into modular components to separate concerns such as player management, combat mechanics, enemy encounters, item interactions, level progression, and score tracking.
+
+Purpose of the Project
+Refactor a monolithic adventure game into a modular and scalable design.
+Apply SOLID principles to ensure clean architecture and maintainability.
+Allow for easy extension, such as adding new enemies, items, or mechanics, without modifying existing code.
+How the Game Works
+Player System (Player.java)
+The Player class is responsible for managing the player's health, experience, inventory, and actions.
+
+The player has hit points (HP), which decrease when they take damage.
+The player can pick up and use items such as health potions or magic scrolls.
+The player gains experience points (XP) by defeating enemies.
+Inventory management is handled separately by ItemManager.java.
+Combat System (CombatManager.java)
+The CombatManager handles all combat-related mechanics, including damage calculation and enemy interactions.
+
+The player can attack enemies, and the damage dealt is calculated based on enemy type.
+The combat system supports multiple enemy types (Skeleton, Zombie, Vampire).
+If the player's HP drops to zero, the game ends.
+Enemy Management (EnemyManager.java & Enemy.java)
+The EnemyManager class spawns, tracks, and manages enemy encounters.
+
+The base Enemy class defines common behaviors such as taking damage and attacking.
+Each enemy type (Skeleton, Zombie, Vampire) inherits from Enemy, following the Liskov Substitution Principle (LSP).
+Enemies have unique attack patterns and health stats.
+Item Management (ItemManager.java)
+The ItemManager is responsible for handling item creation, storage, and usage.
+
+The player can pick up and use items, such as:
+GoldCoin.java – Increases the score.
+HealthElixir.java – Restores health.
+MagicScroll.java – Grants a temporary combat buff.
+Items are stored in the player's inventory and accessed when needed.
+Level Progression (LevelManager.java)
+The LevelManager handles game progression, including:
+
+Enemy spawn rates
+Difficulty scaling (increasing enemy strength over time)
+Level resets after game over
+Each level introduces stronger enemies and more complex combat mechanics.
+Score Management (ScoreManager.java)
+The ScoreManager tracks the player’s progress and achievements.
+
+The player earns points by defeating enemies and collecting gold coins.
+The score is displayed at the end of the game.
+Conclusion
+The SOLID-Refactored-AdventureGame successfully transforms a monolithic adventure game into a modular, maintainable, and extensible system by strictly following the SOLID principles.
+
+Key Achievements:
+Improved Code Maintainability – Each class has a single responsibility, making the code easier to understand and modify.
+Scalability & Extensibility – New enemies, items, or mechanics can be added without modifying existing code.
+Decoupled Components – Combat, enemy management, items, and level progression are now handled independently, reducing dependencies.
+Increased Readability & Reusability – The modular design makes it easier for future developers to expand or refactor the game.
+Final Thoughts
+This refactoring process demonstrates the power of clean architecture and best coding practices. By applying SOLID principles, we have future-proofed the game, ensuring that new features can be introduced effortlessly while maintaining a robust and scalable codebase.
+
+This project serves as an excellent example of good software design and can be used as a reference for building other object-oriented, maintainable applications.
